@@ -1,0 +1,359 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>DIVISIÓN PRESENTACIÓN</title>
+	
+<style type="text/css">
+	div {
+   			font-family: "artifika";
+  			background-color: darkgoldenrod;
+			text-align: center;
+			width: 800px;
+		    height: 600PX; 
+			position: absolute;
+			left: 265px 
+   		}
+	
+	#encabezado3 {   			
+		    font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
+			margin-left: 2px;
+			margin-right: 5px;
+			margin-top: 10px;
+			font-size: auto;
+			font-weight: bold;				
+			position: absolute;
+			}
+	
+	#ambexpli1 {margin-right:1px;
+	  		 margin-left: 1070px;
+			 text-align: left;
+	  		 margin-top: auto;
+	  		 position: absolute;
+		}
+	
+	#ambexpli22 {margin-right:1px;
+	  		 margin-left: 5px;
+			 text-align: left;
+	  		 margin-top: auto;
+	  		 position: absolute;
+		}
+	
+	#parrafo1 {   			
+			font-style: normal;
+			text-align:justify;
+			margin-left: 2px;
+			margin-right: 5px;
+			margin-top: 60px;
+			font-size: auto;
+			font-weight: bold;				
+			position: absolute;
+			}
+	
+	#empezar1 {
+   			border: #000000 2px solid;	
+			background-color: chartreuse;
+			font-style: italic;
+			margin-left: 240px;
+			margin-right: auto;
+			margin-top: 543px;
+			font-size: 20px;
+			font-weight: bold;	
+			font-family: "Times New Roman";
+			color: navy;
+			position: absolute;
+			border-radius: 100%;
+			padding: 10px 28px;
+			cursor: pointer;
+			}
+		
+</style>
+	
+	
+</head>
+
+<body>
+	
+<div>
+	<h3 id = "encabezado3" >APLICACIÓN DE SOFTWARE PARA LA ENSEÑANZA  Y APRENDIZAJE DE LA DIVISIÓN EN LA ESCUELA PRIMARIA</h3>	
+	
+	<p id="parrafo1">Esta es una aplicación para la enseñanza de la operación matemática, división, en forma restando, es útil tanto para niños como para personas adultas, en consecuencia, profesores, niños y cualquier persona  puede apropiarse de este proceso para actualizarse y observar muchos de los elementos implícitos en la operación fundamental de la división.  La aplicación incluye divisiones por una cifra y por dos cifras, por tanto el divisor varía entre 5 y 15; el dividendo puede ser de dos cifras o de tres cifras, inclusive hasta el número 999.<br> En esta aplicación se discrimina el valor posicional de los números en el dividendo, es decir unidades, decenas y centenas, con base en esto el valor agregado de la aplicación consiste en realizar reparticiones de las unidades, decenas y centenas en grupos iguales, cuya cantidad es la que indica el divisor; los grupos iguales se encuentran ubicados en la parte derecha de la aplicación, en la parte izquierda hay unos gráficos que indican qué es una centena, una decena y una unidad.<br>En el centro de la aplicación se encuentra el proceso numérico de la división, de esta manera el dividendo y el divisor se pueden variar o elegir al oprimir el botón de inicio en la parte de abajo, al hacer esto simultáneamente cambian la cantidad de grupos donde se hacen las reparticiones y el número del dividendo expresado gráficamente en unidades, decenas y centenas, ubicadas en la parte inferior derecha. Estos valores posicionales gráficos ubicados en la parte inferior derecha se pueden arrastrar y soltar con el Mouse, “ratón”, de acuerdo a las reparticiones que se vayan realizando en cada grupo o rectángulo amarillo, en este sentido las unidades, decenas y centenas que se vayan repartiendo, tienen que quedar dentro de cada grupo o rectángulo amarillo para poder obtener un resultado correcto.<br>Si los valores numéricos ingresados por el usuario de la aplicación son los correspondientes al proceso de la división restando, y además si el valor total de cada grupo con sus respectivas unidades, y/o decenas, y/o centenas, coinciden con el valor del cociente ingresado por el usuario, entonces la aplicación saca un mensaje de éxito, asigna un punto y activa un sonido. Habiendo realizado el proceso correcto, si se oprime de nuevo el botón de inicio, se puede empezar en una nueva división y el puntaje se va acumulando. Se debe tener en cuenta que al arrastrar unidades y decenas se pueden ir necesitando más, cuando esto sucede, entonces se oprime el botón de unidades o decenas, de acuerdo a lo que se requiera, en el caso de que se creen 10 unidades entonces debe desaparecer una decena, y en el caso de crear 10 decenas entonces debe desaparecer una centena; BIENVENIDO, puedes iniciar dando click en el botón EMPEZAR; un profesor, una persona adulta o cualquiera pueda colaborar. </p>
+	
+	<!--<form > 
+	<input id = "empezar1" type="button" value="EMPEZAR" onclick="document.location= 'DIVISION_FINAL_44.html'"  target= "_blank">
+	</form > -->
+	
+	<button type="button" id = "empezar1" onclick="javascript:void(window.open('DIVISION_FINAL_44.html'));" >EMPEZAR</button>
+	
+</div>
+	
+	<canvas id = "ambexpli1" width="275" height="600" style="border:1px solid #000000">	
+	</canvas>
+	
+	<canvas id = "ambexpli22" width="240" height="600" style="border:1px solid #000000">	
+	</canvas>
+	
+	<script>
+		
+	var explix1 = 20, expliy1 = 50, anchoexpli1 = 120, altoexpli1 = 120;
+	var iniccx1 = 20, iniccy1 = 20, anchocent1 = 40, altocent1 = 40;
+	var decexplix1 = 20, decexpliy1 = 290, anchoddexpli1 = 120, altoddexpli1 = 30;
+	var iniddx1 = 20, iniddy1 = 5, anchodde1 = 40, altodde1 = 15;
+	var uniexplix1 = 20, uniexpliy1 = 430, anchouniexpli1 = 30, altouniexpli1 = 30;
+	var muevex1 = 1, muevey1 = 1, anchomue1 = 15, altomue1 = 15;
+	
+	var canexpli1 = document.getElementById("ambexpli1");
+	var ctxx11 = canexpli1.getContext("2d");
+		
+	var canexpli22 = document.getElementById("ambexpli22");
+	var ctxx222 = canexpli22.getContext("2d");
+		
+	ctxx11.fillStyle = 'rgba(51, 102, 0, 1)';
+	ctxx11.font = '20px serif';
+	ctxx11.fillText('1 CENTENA =', 20, 20);
+	ctxx11.fillText(' = ', 160, 118);
+	ctxx11.fillText('1 DECENA =', 20, 250);
+	ctxx11.fillText(' = ', 160, 310);
+	ctxx11.fillText('1 UNIDAD =', 20, 390);
+	ctxx11.fillText(' = ', 160, 450);
+		
+	ctxx222.fillStyle = 'rgba(51, 102, 0, 1)';
+	ctxx222.font = '20px serif';
+	ctxx222.fillText('1 CENTENA =', 10, 20);
+	ctxx222.fillText(' = ', 150, 118);
+	ctxx222.fillText('1 DECENA =', 10, 250);
+	ctxx222.fillText(' = ', 150, 310);
+	ctxx222.fillText('1 UNIDAD =', 10, 390);
+	ctxx222.fillText(' = ', 150, 450);
+		
+		
+	var centenaexplica1 = {
+			creacentenaexplica1: function(explix1, expliy1){
+				ctxx11.fillStyle = 'rgba(0, 255, 204, 1)'
+  				ctxx11.fillRect(explix1, expliy1, anchoexpli1, altoexpli1)				
+				ctxx11.strokeStyle = 'black'
+				ctxx11.strokeRect(explix1, expliy1, anchoexpli1, altoexpli1)				
+				ctxx11.strokeStyle = 'black'				
+				for (var i = 0; i < 10; i++) {					
+					ctxx11.strokeRect(explix1 + i*12, expliy1, 12, altoexpli1)
+					ctxx11.strokeRect(explix1, expliy1 + i*12, anchoexpli1, 12)				
+				}
+				ctxx11.clearRect(explix1 + 36, expliy1 + 36, 48, 48)
+				ctxx11.fillStyle = 'rgba(0, 0, 0, 1)'
+				ctxx11.font = '18px serif'
+				ctxx11.fillText('1C', explix1+50, expliy1+64)
+			}
+		}		
+		centenaexplica1.creacentenaexplica1(explix1, expliy1);
+		
+		var centenarepartiexp1 = {
+			creacentenaexp1: function(iniccx1, iniccy1){
+				ctxx11.fillStyle = 'rgba(0, 255, 204, 1)'
+  				ctxx11.fillRect(iniccx1, iniccy1, anchocent1, altocent1)				
+				ctxx11.strokeStyle = 'black'
+				ctxx11.strokeRect(iniccx1, iniccy1, anchocent1, altocent1)				
+				ctxx11.strokeStyle = 'black'				
+				for (var i = 0; i < 10; i++) {					
+					ctxx11.strokeRect(iniccx1 + i*4, iniccy1, 4, altocent1)
+					ctxx11.strokeRect(iniccx1, iniccy1 + i*4, anchocent1, 4)					
+				}
+				ctxx11.clearRect(iniccx1 + 12, iniccy1 + 12, 15, 15)
+				ctxx11.fillStyle = 'rgba(0, 0, 0, 1)'
+				ctxx11.font = '10px serif'
+				ctxx11.fillText('1c', iniccx1+15, iniccy1+22)
+			}
+		}
+		
+		centenarepartiexp1.creacentenaexp1(200, 90);
+		
+		
+		var decenaexplica1 = {
+			creadecenaexplica1: function(decexplix1, decexpliy1){
+				ctxx11.fillStyle = 'rgba(153, 204, 0, 1)'
+  				ctxx11.fillRect(decexplix1, decexpliy1, anchoddexpli1, altoddexpli1)		
+				ctxx11.strokeStyle = 'black'				
+				ctxx11.strokeRect(decexplix1, decexpliy1, anchoddexpli1, altoddexpli1)		
+				ctxx11.strokeStyle = 'black'				
+				for (var i = 0; i < 10; i++) {					
+					ctxx11.strokeRect(decexplix1 + i*12, decexpliy1, 12, altoddexpli1 + 0.5);
+				}
+				ctxx11.clearRect(decexplix1 + 48, decexpliy1 + 4, 24, 18)
+				ctxx11.fillStyle = 'rgba(0, 0, 0, 1)'
+				ctxx11.font = '14px serif'
+				ctxx11.fillText('1d', decexplix1+52, decexpliy1+17)
+			}
+		}		
+		decenaexplica1.creadecenaexplica1(decexplix1, decexpliy1);
+		
+		var decenarepartiexp1 = {
+			creadecenaexp1: function(iniddx1, iniddy1){
+				ctxx11.fillStyle = 'rgba(153, 204, 0, 1)'
+  				ctxx11.fillRect(iniddx1, iniddy1, anchodde1, altodde1)				
+				ctxx11.strokeStyle = 'black'				
+				ctxx11.strokeRect(iniddx1, iniddy1, anchodde1, altodde1)				
+				ctxx11.strokeStyle = 'black'				
+				for (var i = 0; i < 10; i++) {					
+					ctxx11.strokeRect(iniddx1 + i*4, iniddy1, 4, altodde1 + 0.5);			
+				}
+				ctxx11.clearRect(iniddx1 + 12, iniddy1 + 2, 12, 10)
+				ctxx11.fillStyle = 'rgba(0, 0, 0, 1)'
+				ctxx11.font = '10px serif'
+				ctxx11.fillText('1d', iniddx1+13, iniddy1+11)
+			}
+		}
+		decenarepartiexp1.creadecenaexp1(200, 297);
+		
+		
+		var unidadExplica1 = {
+			creauniexpli1: function(uniexplix1, uniexpliy1){
+				ctxx11.fillStyle = 'rgba(0, 0, 255, 1)'
+  				ctxx11.fillRect(uniexplix1, uniexpliy1, anchouniexpli1, altouniexpli1)
+				ctxx11.fillStyle = 'rgba(255, 255, 0, 1)'
+				ctxx11.font = '14px serif'
+				ctxx11.fillText('1U', uniexplix1+5, uniexpliy1+20)
+				ctxx11.strokeStyle = 'black'
+				ctxx11.strokeRect(uniexplix1, uniexpliy1, anchouniexpli1, altouniexpli1)
+			}
+		}
+		
+		unidadExplica1.creauniexpli1(uniexplix1, uniexpliy1);
+		
+		var unidadexp1 = {
+			creauniexp1: function(muevex1, muevey1){
+				ctxx11.fillStyle = 'rgba(0, 0, 255, 1)'
+  				ctxx11.fillRect(muevex1, muevey1, anchomue1, altomue1)
+				ctxx11.fillStyle = 'rgba(255, 255, 0, 1)'
+				ctxx11.font = '10px serif'
+				ctxx11.fillText('1U', muevex1, muevey1+11)
+				ctxx11.strokeStyle = 'black'
+				ctxx11.strokeRect(muevex1, muevey1, anchomue1, altomue1)
+			}
+		}
+		unidadexp1.creauniexp1(200, 435);
+		
+		
+		var centenaexplica1 = {
+			creacentenaexplica1: function(explix1, expliy1){
+				ctxx222.fillStyle = 'rgba(0, 255, 204, 1)'
+  				ctxx222.fillRect(explix1, expliy1, anchoexpli1, altoexpli1)				
+				ctxx222.strokeStyle = 'black'
+				ctxx222.strokeRect(explix1, expliy1, anchoexpli1, altoexpli1)				
+				ctxx222.strokeStyle = 'black'				
+				for (var i = 0; i < 10; i++) {					
+					ctxx222.strokeRect(explix1 + i*12, expliy1, 12, altoexpli1)
+					ctxx222.strokeRect(explix1, expliy1 + i*12, anchoexpli1, 12)			
+				}
+				ctxx222.clearRect(explix1 + 36, expliy1 + 36, 48, 48)
+				ctxx222.fillStyle = 'rgba(0, 0, 0, 1)'
+				ctxx222.font = '18px serif'
+				ctxx222.fillText('1C', explix1+50, expliy1+64)
+			}
+		}		
+		centenaexplica1.creacentenaexplica1(explix1, expliy1);
+		
+		var centenarepartiexp1 = {
+			creacentenaexp1: function(iniccx1, iniccy1){
+				ctxx222.fillStyle = 'rgba(0, 255, 204, 1)'
+  				ctxx222.fillRect(iniccx1, iniccy1, anchocent1, altocent1)				
+				ctxx222.strokeStyle = 'black'
+				ctxx222.strokeRect(iniccx1, iniccy1, anchocent1, altocent1)				
+				ctxx222.strokeStyle = 'black'				
+				for (var i = 0; i < 10; i++) {					
+					ctxx222.strokeRect(iniccx1 + i*4, iniccy1, 4, altocent1)
+					ctxx222.strokeRect(iniccx1, iniccy1 + i*4, anchocent1, 4)					
+				}
+				ctxx222.clearRect(iniccx1 + 12, iniccy1 + 12, 15, 15)
+				ctxx222.fillStyle = 'rgba(0, 0, 0, 1)'
+				ctxx222.font = '10px serif'
+				ctxx222.fillText('1c', iniccx1+15, iniccy1+22)
+			}
+		}
+		
+		centenarepartiexp1.creacentenaexp1(190, 90);
+		
+		
+		var decenaexplica1 = {
+			creadecenaexplica1: function(decexplix1, decexpliy1){
+				ctxx222.fillStyle = 'rgba(153, 204, 0, 1)'
+  				ctxx222.fillRect(decexplix1, decexpliy1, anchoddexpli1, altoddexpli1)		
+				ctxx222.strokeStyle = 'black'				
+				ctxx222.strokeRect(decexplix1, decexpliy1, anchoddexpli1, altoddexpli1)		
+				ctxx222.strokeStyle = 'black'				
+				for (var i = 0; i < 10; i++) {					
+				  ctxx222.strokeRect(decexplix1 + i*12, decexpliy1, 12, altoddexpli1 + 0.5);
+				}
+				ctxx222.clearRect(decexplix1 + 48, decexpliy1 + 4, 24, 18)
+				ctxx222.fillStyle = 'rgba(0, 0, 0, 1)'
+				ctxx222.font = '14px serif'
+				ctxx222.fillText('1d', decexplix1+52, decexpliy1+17)
+			}
+		}		
+		decenaexplica1.creadecenaexplica1(decexplix1, decexpliy1);
+		
+		var decenarepartiexp1 = {
+			creadecenaexp1: function(iniddx1, iniddy1){
+				ctxx222.fillStyle = 'rgba(153, 204, 0, 1)'
+  				ctxx222.fillRect(iniddx1, iniddy1, anchodde1, altodde1)				
+				ctxx222.strokeStyle = 'black'				
+				ctxx222.strokeRect(iniddx1, iniddy1, anchodde1, altodde1)				
+				ctxx222.strokeStyle = 'black'				
+				for (var i = 0; i < 10; i++) {					
+					ctxx222.strokeRect(iniddx1 + i*4, iniddy1, 4, altodde1 + 0.5);			
+				}
+				ctxx222.clearRect(iniddx1 + 12, iniddy1 + 2, 12, 10)
+				ctxx222.fillStyle = 'rgba(0, 0, 0, 1)'
+				ctxx222.font = '10px serif'
+				ctxx222.fillText('1d', iniddx1+13, iniddy1+11)
+			}
+		}
+		decenarepartiexp1.creadecenaexp1(190, 297);
+		
+		
+		var unidadExplica1 = {
+			creauniexpli1: function(uniexplix1, uniexpliy1){
+				ctxx222.fillStyle = 'rgba(0, 0, 255, 1)'
+  				ctxx222.fillRect(uniexplix1, uniexpliy1, anchouniexpli1, altouniexpli1)
+				ctxx222.fillStyle = 'rgba(255, 255, 0, 1)'
+				ctxx222.font = '14px serif'
+				ctxx222.fillText('1U', uniexplix1+5, uniexpliy1+20)
+				ctxx222.strokeStyle = 'black'
+				ctxx222.strokeRect(uniexplix1, uniexpliy1, anchouniexpli1, altouniexpli1)
+			}
+		}
+		
+		unidadExplica1.creauniexpli1(uniexplix1, uniexpliy1);
+		
+		var unidadexp1 = {
+			creauniexp1: function(muevex1, muevey1){
+				ctxx222.fillStyle = 'rgba(0, 0, 255, 1)'
+  				ctxx222.fillRect(muevex1, muevey1, anchomue1, altomue1)
+				ctxx222.fillStyle = 'rgba(255, 255, 0, 1)'
+				ctxx222.font = '10px serif'
+				ctxx222.fillText('1U', muevex1, muevey1+11)
+				ctxx222.strokeStyle = 'black'
+				ctxx222.strokeRect(muevex1, muevey1, anchomue1, altomue1)
+			}
+		}
+		unidadexp1.creauniexp1(190, 435);
+		
+		ctxx222.fillStyle = 'rgba(204, 204, 0, 1)';		
+  		ctxx222.ellipse(120, 530, 40, 110, Math.PI/2, 0, Math.PI*2);
+		ctxx222.strokeStyle = 'black'
+		ctxx222.stroke();
+		ctxx222.fill();
+		ctxx222.fillStyle = 'rgba(0, 0, 0, 1)';
+		ctxx222.font = '12px serif';
+		ctxx222.fillText('Diseño: Wílmar Ramírez, cc: 98536082', 25, 525);
+		ctxx222.fillText('Tel: 3218531584. Medellín - Colombia', 25, 540);
+		
+		
+		
+		
+		
+		
+	</script>
+	
+	
+	
+</body>
+</html>
